@@ -2,12 +2,10 @@
 
 ## Exercise I
 
-a)O(n^3).
-The number of loops will depend on n* n *n.
-This is common with algorithms that involve nested iterations over the data set.
+a)O(n). Because in the first "while" loop is checking a < n^3 and then inside the loop in checking a + n^2 and n^2 with n^3 cancel each other.
 
-b)O(n^2).
-Nested "for loops" based on "n" in both loops(nested).
+b)Nested "for loops" based on "n" in both loops(nested).
+outer loop is O(n), but the inner loop they are doubling j so its O(n) \* O(log n) which gives you O(n log n)
 
 c)O(N).
 Called recusively based on bunnies - 1, base case bunnies == 0

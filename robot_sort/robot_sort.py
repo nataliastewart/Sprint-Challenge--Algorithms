@@ -97,26 +97,26 @@ class SortingRobot:
         Sort the robot's list.
         """
     #bubble sort might be the best start - O(n)
-    def sort_the_stuff():
+    def sort_the_items():
           # Grab item at the beginning of run then start-> (bubble sort) 
         self.swap_item()
             # Traverse right till the end of list, comparing and swapping for larger items
         while self.can_move_right():
             self.move_right()
                 # If the held item's value is less, return -1.
-            if self.compare_item() == -1:
+            if self.compare_item() == 1:
                 self.swap_item()
             # Compare the item your holding to the item at the end of the list, swap if item held is larger
             # If the held item's value is greater, return 1.
             #To be able to move to the left - get the smaller items now...
-            if self.compare_item() == 1:
+            if self.compare_item() == - 1:
                 self.swap_item()
             # Traverse left till you hit the index containing None, swapping for smaller items
             while self.compare_item() != None:
                 self.move_left()
                 # If the held item's value is greater, return 1.
                 #To be able to move to the left - get the smaller items now...
-                if self.compare_item() == 1:
+                if self.compare_item() == - 1:
                     self.swap_item()
             # Place the held value into the index containing None
             self.swap_item()
@@ -125,7 +125,8 @@ class SortingRobot:
 
         # Perform the above routine until the end of the list
         while self.can_move_right() or self.compare_item() != None:
-            sort_the_stuff()
+            sort_the_items()
+  
 
 
 
