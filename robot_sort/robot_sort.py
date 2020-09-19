@@ -104,6 +104,7 @@ class SortingRobot:
             
             while self.move_right():
                 if self.compare_item() == 1:
+# means: self._item (The item the robot is holding) > self._list[self._position](The list position the robot is at):return 1
                     self.swap_item()
             if self.compare_item() is None:
                 self.swap_item()
