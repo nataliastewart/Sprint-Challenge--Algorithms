@@ -94,10 +94,31 @@ class SortingRobot:
 
     def sort(self):
         """
-        Sort the robot's list.
-        """
-        # Fill this out
-        pass
+        Sort the robot's list."""
+
+        self.set_light_on()
+        
+        self.swap_item()
+        
+        while self.light_is_on():
+            
+            while self.move_right():
+                if self.compare_item() == 1:
+# means: self._item (The item the robot is holding) > self._list[self._position](The list position the robot is at):return 1
+                    self.swap_item()
+            if self.compare_item() is None:
+                self.swap_item()
+                self.set_light_off()
+                break
+            else:
+                while self.move_left():
+                    if self.compare_item() is None:
+                        self.swap_item()
+                        self.move_right()
+                        self.swap_item()
+                        break         
+   
+
 
 
 if __name__ == "__main__":
