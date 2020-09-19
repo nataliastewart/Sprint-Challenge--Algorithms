@@ -94,39 +94,29 @@ class SortingRobot:
 
     def sort(self):
         """
-        Sort the robot's list.
-        """
-    #bubble sort might be the best start - O(n)
-    def sort_the_items():
-          # Grab item at the beginning of run then start-> (bubble sort) 
-        self.swap_item()
-            # Traverse right till the end of list, comparing and swapping for larger items
-        while self.can_move_right():
-            self.move_right()
-                # If the held item's value is less, return -1.
-            if self.compare_item() == 1:
-                self.swap_item()
-            # Compare the item your holding to the item at the end of the list, swap if item held is larger
-            # If the held item's value is greater, return 1.
-            #To be able to move to the left - get the smaller items now...
-            if self.compare_item() == - 1:
-                self.swap_item()
-            # Traverse left till you hit the index containing None, swapping for smaller items
-            while self.compare_item() != None:
-                self.move_left()
-                # If the held item's value is greater, return 1.
-                #To be able to move to the left - get the smaller items now...
-                if self.compare_item() == - 1:
-                    self.swap_item()
-            # Place the held value into the index containing None
-            self.swap_item()
-            # Move right one poistion
-            self.move_right()
+        Sort the robot's list."""
 
-        # Perform the above routine until the end of the list
-        while self.can_move_right() or self.compare_item() != None:
-            sort_the_items()
-  
+        self.set_light_on()
+        
+        self.swap_item()
+        
+        while self.light_is_on():
+            
+            while self.move_right():
+                if self.compare_item() == 1:
+                    self.swap_item()
+            if self.compare_item() is None:
+                self.swap_item()
+                self.set_light_off()
+                break
+            else:
+                while self.move_left():
+                    if self.compare_item() is None:
+                        self.swap_item()
+                        self.move_right()
+                        self.swap_item()
+                        break         
+   
 
 
 
